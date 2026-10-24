@@ -1,14 +1,53 @@
 [gd_scene format=3 uid="uid://dsw6tk3vc150s"]
 
 [ext_resource type="Script" uid="uid://s5h1vyr167ka" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://bjjmvv7dsj5uk" path="res://assets/icon.svg" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://b4iy7hyiaghbg" path="res://assets/roverspritesheet.png" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://2wx6gdujue41" path="res://scripts/animated_sprite_2d.gd" id="3_dqkch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 5600, 2800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 2800, 5600, 2800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 5600, 5600, 2800)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 8400, 5600, 2800)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j1hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": 1,
+"name": &"drive",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1846436688]
 script = ExtResource("1_3vyb7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=7138770]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=705186142]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1845945703]
-texture = ExtResource("2_g2els")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=570100674]
+position = Vector2(-4, -4)
+scale = Vector2(0.043794643, 0.043794643)
+sprite_frames = SubResource("SpriteFrames_3j1hy")
+animation = &"drive"
+script = ExtResource("3_dqkch")

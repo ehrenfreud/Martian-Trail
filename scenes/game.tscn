@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsw6tk3vc150s" path="res://scenes/player.tscn" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://88ejwj77coxy" path="res://scenes/EventUI.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://djmt86v344fgv" path="res://scenes/UI.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://djulwwg8grhdw" path="res://assets/sun.png" id="6_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=187084969]
 script = ExtResource("1_iywne")
@@ -16,3 +17,8 @@ script = ExtResource("1_iywne")
 [node name="Control" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
 
 [node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661965181]
+position = Vector2(-357.00003, -215.99998)
+scale = Vector2(0.4017857, 0.4017857)
+texture = ExtResource("6_p57ef")
