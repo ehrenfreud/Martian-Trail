@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnssaft1vjvld" path="res://scripts/world.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bty1vfchhhyda" path="res://assets/marsbackground.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dsw6tk3vc150s" path="res://scenes/player.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://djmt86v344fgv" path="res://scenes/UI.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=187084969]
 
@@ -19,3 +20,5 @@ scale = Vector2(10, 12)
 texture = ExtResource("2_lbhrr")
 
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
+
+[node name="Control" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
