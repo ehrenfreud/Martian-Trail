@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export_range(0.0, 100.0) var water: float = 100.0
 @export_range(0.0, 100.0) var hull_integrity: float = 100.0
 
+var distance_from_base: int = 7000
+var days: int = 0
 
 @export var move_speed: float = 100.0
 

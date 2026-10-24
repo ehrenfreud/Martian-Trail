@@ -43,8 +43,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1846436688]
 script = ExtResource("1_3vyb7")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=705186142]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=570100674]
 position = Vector2(-4, -4)
 scale = Vector2(0.043794643, 0.043794643)

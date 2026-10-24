@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://88ejwj77coxy" path="res://scenes/EventUI.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://djmt86v344fgv" path="res://scenes/UI.tscn" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://djulwwg8grhdw" path="res://assets/sun.png" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://bm3focbos37li" path="res://scripts/EventHandler.gd" id="6_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=187084969]
 script = ExtResource("1_iywne")
@@ -14,11 +15,20 @@ script = ExtResource("1_iywne")
 
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
 
-[node name="Control" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
-
 [node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
+offset_left = 15.0
+offset_top = -34.0
+offset_right = 15.0
+offset_bottom = -34.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=661965181]
 position = Vector2(-357.00003, -215.99998)
 scale = Vector2(0.4017857, 0.4017857)
 texture = ExtResource("6_p57ef")
+
+[node name="EventHandler" type="Node" parent="." unique_id=991054439]
+script = ExtResource("6_u5sy4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=86995643]
+
+[node name="UI" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
