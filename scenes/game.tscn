@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://b4sx4ej35nmhe" path="res://scenes/world.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dsw6tk3vc150s" path="res://scenes/player.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://djmt86v344fgv" path="res://scenes/UI.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=187084969]
 
 [node name="World" parent="." unique_id=1283787676 instance=ExtResource("1_yqjtg")]
 
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
+
+[node name="Control" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://djmt86v344fgv"]
 
+[ext_resource type="Script" uid="uid://45k6v2wyrru1" path="res://scripts/ui.gd" id="1_dj8aq"]
+
 [node name="Control" type="Control" unique_id=344335980]
 layout_mode = 3
 anchors_preset = 15
@@ -7,9 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dj8aq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=136643855]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-text = "hi"
