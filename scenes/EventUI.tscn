@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bcmsaeo0w7vym" path="res://scripts/event_ui.gd" id="1_byv46"]
 
-[node name="EventUi" type="Control" unique_id=2026063733]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arrcy"]
+bg_color = Color(0.099, 0.10665001, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byv46"]
+bg_color = Color(0.3432, 0.35772002, 0.44, 1)
+
+[node name="EventUI" type="Control" unique_id=2026063733]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,12 +21,15 @@ script = ExtResource("1_byv46")
 layout_mode = 0
 offset_left = -495.0
 offset_top = 89.0
-offset_right = 482.0
-offset_bottom = 289.0
+offset_right = 470.0
+offset_bottom = 325.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_arrcy")
 
 [node name="Message" type="RichTextLabel" parent="Panel" unique_id=963779275]
 layout_mode = 0
-offset_right = 863.0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 950.0
 offset_bottom = 197.0
 text = "Dust storm approaching!
 "
@@ -31,4 +40,5 @@ offset_left = 77.0
 offset_top = 53.0
 offset_right = 308.0
 offset_bottom = 183.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_byv46")
 text = "Continue"
