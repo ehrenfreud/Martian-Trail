@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://88ejwj77coxy"]
+
+[ext_resource type="Script" uid="uid://bcmsaeo0w7vym" path="res://scripts/event_ui.gd" id="1_byv46"]
+
+[node name="EventUi" type="Control" unique_id=2026063733]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_byv46")
+
+[node name="Panel" type="Panel" parent="." unique_id=278626328]
+layout_mode = 0
+offset_left = -495.0
+offset_top = 89.0
+offset_right = 482.0
+offset_bottom = 289.0
+
+[node name="Message" type="RichTextLabel" parent="Panel" unique_id=963779275]
+layout_mode = 0
+offset_right = 863.0
+offset_bottom = 197.0
+text = "Dust storm approaching!
+"
+
+[node name="Button" type="Button" parent="Panel" unique_id=1555691432]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 53.0
+offset_right = 308.0
+offset_bottom = 183.0
+text = "Continue"
