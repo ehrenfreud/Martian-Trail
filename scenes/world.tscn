@@ -7,10 +7,16 @@
 script = ExtResource("1_rwgxs")
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=1488711861]
-scale = Vector2(10.8, 10.8)
+position = Vector2(-155, -107.00002)
+scale = Vector2(6.5, 6.5)
 texture = ExtResource("1_nnsk1")
 
 [node name="Background2" type="Sprite2D" parent="." unique_id=135533207]
-position = Vector2(1078, 0)
-scale = Vector2(10.8, 10.8)
+position = Vector2(495, -107)
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("1_nnsk1")
+
+[node name="Background3" type="Sprite2D" parent="." unique_id=290749760]
+position = Vector2(1145, -107.00002)
+scale = Vector2(6.5, 6.5)
 texture = ExtResource("1_nnsk1")
