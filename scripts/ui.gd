@@ -1,11 +1,21 @@
 extends Control
 
+@onready var message: RichTextLabel = $Panel/Message
+@onready var player = $"../Player"
 
-# Called when the node enters the scene tree for the first time.
+var full_text: String = ""
+var characters_shown: int = 0
+var typing_speed: float = 0.035
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass
+	
+
+func show_message(text: String) -> void:
+	message.text = text
+
+func _on_continue_pressed() -> void:
+	hide()
+
+func _process(delta: float) -> void:
+	show_message("Distance: " + str(player.distance_from_base))

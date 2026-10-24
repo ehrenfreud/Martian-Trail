@@ -11,7 +11,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dj8aq")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=136643855]
+[node name="Panel" type="Panel" parent="." unique_id=1063814409]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -480.0
+offset_top = 53.0
+offset_right = 484.0
+offset_bottom = 311.54443
+
+[node name="Message" type="RichTextLabel" parent="Panel" unique_id=1517190984]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 36.0
+offset_right = 902.0
+offset_bottom = 227.0
