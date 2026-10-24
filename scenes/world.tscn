@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://b4sx4ej35nmhe"]
 
-[node name="Background" type="Node" unique_id=1283787676]
+[ext_resource type="Texture2D" uid="uid://bty1vfchhhyda" path="res://assets/marsbackground.png" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://bnssaft1vjvld" path="res://scripts/world.gd" id="1_rwgxs"]
+
+[node name="World" type="Node2D" unique_id=1520972357]
+script = ExtResource("1_rwgxs")
+
+[node name="Background1" type="Sprite2D" parent="." unique_id=1488711861]
+scale = Vector2(10.8, 10.8)
+texture = ExtResource("1_nnsk1")
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=135533207]
+position = Vector2(1078, 0)
+scale = Vector2(10.8, 10.8)
+texture = ExtResource("1_nnsk1")
