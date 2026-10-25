@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://2wx6gdujue41" path="res://scripts/animated_sprite_2d.gd" id="8_ir15t"]
 [ext_resource type="Texture2D" uid="uid://jkwsym0lppum" path="res://assets/geyser.png" id="8_trtic"]
 [ext_resource type="Texture2D" uid="uid://cirnwp57geh8h" path="res://assets/dustdevil.png" id="9_ir15t"]
+[ext_resource type="Texture2D" uid="uid://eimao6trhrym" path="res://assets/snowstorm.png" id="10_ca42v"]
 [ext_resource type="Texture2D" uid="uid://i25cticid5fl" path="res://assets/windstorm.png" id="11_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dcjc4fgpc7581" path="res://assets/solarflare.png" id="12_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://db4ifk7wveqr7" path="res://scenes/death.tscn" id="15_ca42v"]
@@ -228,7 +229,7 @@ script = ExtResource("1_iywne")
 [node name="World" parent="." unique_id=1283787676 instance=ExtResource("1_yqjtg")]
 
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
-z_index = 13
+z_index = 10
 
 [node name="Sun" type="Sprite2D" parent="." unique_id=221500648]
 z_index = 8
@@ -335,9 +336,9 @@ offset_bottom = -34.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1510224209]
 wait_time = 1.5
-autostart = true
 
-[node name="death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
+[node name="Death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
+z_index = 50
 
 [node name="End" parent="." unique_id=1719684420 instance=ExtResource("15_ir15t")]
 
