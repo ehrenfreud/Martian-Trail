@@ -75,7 +75,7 @@ func step():
 			3: callSnowStorm()
 			4: callWindStorm()
 		animated_sprite.speed_scale = 0
-	daysSinceEvent = 0
+		daysSinceEvent = 0
 
 	
 	
