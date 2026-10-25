@@ -156,11 +156,11 @@ func step():
 		timer.stop()
 		ui.message.hide()
 		match randi()%5:
-			0: callDustStorm()
+			0: callGeysers()#callDustStorm()
 			1: callGeysers() 
-			2: callDustDevil()
-			3: callSnowStorm()
-			4: callWindStorm()
+			2: callGeysers()#callDustDevil()
+			3: callGeysers()#callSnowStorm()
+			4: callGeysers()
 		animated_sprite.speed_scale = 0
 		daysSinceEvent = 0
 

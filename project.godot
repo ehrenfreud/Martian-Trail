@@ -15,6 +15,10 @@ run/main_scene="uid://87lg55e08lyc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+AudioManager="*uid://d3m8h0prx2sk"
+
 [display]
 
 window/size/viewport_width=960

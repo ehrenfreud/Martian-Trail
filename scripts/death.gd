@@ -7,6 +7,7 @@ extends Node2D
 @onready var deathMessage = $Panel/RichTextLabel
 
 func death(message: String):
+	AudioManager.play_music_or_sound_effect(true)
 	timer.stop()
 	player.hide()
 	world.constant = 0
