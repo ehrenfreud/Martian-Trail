@@ -29,6 +29,13 @@ func death(message: String):
 			)
 			pass
 		"oxygen":
+			deathMessage.text = (
+				"\n\n\n\n[center][b]WARNING: OXYGEN LEVEL CRITICAL[\b] \n
+				The last voice you would hear was the rover's repeated automated warnings, almost taunting you. " +
+				"There is no oxygen outside of the rover, or anywhere near it. As your vision darkened and blurred, " +
+				"all you could do was sit and wait for death to come. \n\n
+				[b]GAME OVER[/b][/center]"
+			)
 			pass
 		"battery":
 			deathMessage.text = (
