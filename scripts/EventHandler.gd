@@ -31,10 +31,11 @@ func callSolarFlare() -> void:
 
 func step():
 	daysSinceEvent += 1
-	if (randi()%100) < (daysSinceEvent*5):
+	if (randi()%100) < (daysSinceEvent*3):
+		daysSinceEvent = 0
 		world.constant = 0
 		timer.stop()
-		ui.hide()
+		ui.message.hide()
 		match randi()%5:
 			0: callDustStorm()
 			1: callGeysers()
@@ -44,7 +45,7 @@ func step():
 	pass
 
 func restart():
-	ui.show()
+	ui.message.show()
 	timer.start()
 	world.constant = 1
 	pass

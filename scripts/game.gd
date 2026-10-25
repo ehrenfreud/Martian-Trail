@@ -11,6 +11,10 @@ func _ready() -> void:
 func step():
 	player.days += 1
 	player.food -= 1.6
+	player.oxygen -= 1.4
+	player.battery += 2
+	if player.battery > 100:
+		player.battery = 100
 	if player.moving:
 		player.distanceFromBase -= 160
 	player.water -= 0.25
@@ -18,7 +22,7 @@ func step():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_timer_timeout() -> void:
