@@ -5,12 +5,16 @@ extends Node
 @onready var world = $"../World"
 @onready var timer = $"../Timer"
 @onready var ui = $"../UI"
+
+@onready var dust_storm_image = $DustStorm
 var list = ["dust_storm", "geysers", "solar flare", 
 "dust_devils", "snow_storms", "wind_storms"]
 var daysSinceEvent: int = 0
 
+
 func callDustStorm() -> void:
 	event_ui.show_message("dust storm")
+	dust_storm_image.show()
 	pass
 func callGeysers() -> void:
 	event_ui.show_message("geysers")
@@ -41,6 +45,7 @@ func step():
 			2: callDustDevil()
 			3: callSnowStorm()
 			4: callWindStorm()
+		daysSinceEvent = 0
 	pass
 
 func restart():
@@ -51,6 +56,8 @@ func restart():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#hides events on start
+	dust_storm_image.hide()
 	pass # Replace with function body.
 
 

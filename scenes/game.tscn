@@ -7,6 +7,37 @@
 [ext_resource type="PackedScene" uid="uid://djmt86v344fgv" path="res://scenes/UI.tscn" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://djulwwg8grhdw" path="res://assets/sun.png" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://bm3focbos37li" path="res://scripts/EventHandler.gd" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://yq8ifpmfwjhl" path="res://assets/duststorm.png" id="7_0tnpc"]
+[ext_resource type="Script" uid="uid://2wx6gdujue41" path="res://scripts/animated_sprite_2d.gd" id="8_vtaks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvpfn"]
+atlas = ExtResource("7_0tnpc")
+region = Rect2(0, 0, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dinhu"]
+atlas = ExtResource("7_0tnpc")
+region = Rect2(0, 350, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvuet"]
+atlas = ExtResource("7_0tnpc")
+region = Rect2(0, 700, 700, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w58ls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvpfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dinhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvuet")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=187084969]
 script = ExtResource("1_iywne")
@@ -14,6 +45,7 @@ script = ExtResource("1_iywne")
 [node name="World" parent="." unique_id=1283787676 instance=ExtResource("1_yqjtg")]
 
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
+z_index = 10
 
 [node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
 offset_left = 15.0
@@ -21,13 +53,30 @@ offset_top = -34.0
 offset_right = 15.0
 offset_bottom = -34.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661965181]
+[node name="Sun" type="Sprite2D" parent="." unique_id=661965181]
+z_index = 3
 position = Vector2(-357.00003, -215.99998)
 scale = Vector2(0.4017857, 0.4017857)
 texture = ExtResource("6_p57ef")
 
 [node name="EventHandler" type="Node" parent="." unique_id=991054439]
 script = ExtResource("6_u5sy4")
+
+[node name="DustStorm" type="Node" parent="EventHandler" unique_id=1869158999]
+
+[node name="DustStormImage" type="AnimatedSprite2D" parent="EventHandler/DustStorm" unique_id=978089888]
+z_index = 2
+position = Vector2(-159.00003, -107)
+scale = Vector2(0.9085714, 0.9085714)
+sprite_frames = SubResource("SpriteFrames_w58ls")
+script = ExtResource("8_vtaks")
+
+[node name="DustStormImage2" type="AnimatedSprite2D" parent="EventHandler/DustStorm" unique_id=1233903832]
+z_index = 2
+position = Vector2(477, -107.00001)
+scale = Vector2(0.9085714, 0.9085714)
+sprite_frames = SubResource("SpriteFrames_w58ls")
+script = ExtResource("8_vtaks")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=86995643]
 
