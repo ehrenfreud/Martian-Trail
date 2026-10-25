@@ -6,17 +6,26 @@ extends Control
 @onready var eventHandler = $"../EventHandler"
 
 var typing_speed: float = 0.065
+var is_typing = false
+
+@onready var buttons: Array[Button] = [
+	$Panel/Choices/Button1,
+	$Panel/Choices/Button2,
+	$Panel/Choices/Button3
+]
 
 func _ready() -> void:
 	hide()
 	continueButton.pressed.connect(_on_continue_pressed)
 
 func show_message(text: String) -> void:
+	is_typing = true
 	message.text = ""
 	show()
 	for i in text:
 		message.append_text(i)
 		await get_tree().create_timer(typing_speed).timeout
+	is_typing = false
 	
 		
 func remove_message() -> void:
