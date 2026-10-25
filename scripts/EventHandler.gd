@@ -182,7 +182,7 @@ func step():
 			1: callGeysers() 
 			2: callGeysers()#callDustDevil()
 			3: callGeysers()#callSnowStorm()
-			4: callGeysers()#callDustDevil()
+			4: callGeysers()
 		animated_sprite.speed_scale = 0
 		daysSinceEvent = 0
 
