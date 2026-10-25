@@ -41,7 +41,7 @@ func callGeysers() -> void:
 	currentEvent = "Geysers"
 	geysersImage1.show()
 	geysersImage2.show()
-	var choices: Array[String] = ["<> Press on through the polar caps.","<> Navigate around the polar ice caps."]
+	var choices: Array[String] = ["Press on through the polar caps.","Navigate around the polar ice caps."]
 	var texts: Array[String] = ["**WARNING: POSSIBLE GEYSERS AHEAD!**", "You remember what little you can from your lessons on Mars. When the sun heats up dry ice underneath the polar caps, pockets of pressure build up- bursting outwards as geysers of pressurized CO2 and debris. If you press through the field, you'll continue as the plan entails, but debris from a geyser may damage your rover. If a serious blow is dealt to your rover, you don't know if you'll even be able to repair it"]
 	event_ui.show_event_array(texts, choices)
 	pass
@@ -77,16 +77,12 @@ func callSolarFlare() -> void:
 	choices)
 
 func on_choice_selected(index: int) -> void:
-	print("HELLO")
 	match currentEvent:
 		"SolarFlare":
 			if index == 0:
-				print("son?")
 				event_ui.type_message("** The lights dim as your rover retracts into itself. You feel a pang in your chest, thinking about the time you might lose… but at least you know you'll be safe. ")
 				event_ui.continue_button()
 			elif index == 1:
-				player.radiation = true
-				player.healthLoss = 7.15
 				if randi() % 2 == 0:
 					event_ui.type_message("SUCCESS: The rover presses on. While you can't dismiss the gnawing feeling in your stomach, you chalk it up to anxiety rather than radiation poisoning. You can't stop here: you must return.")
 					event_ui.continue_button()
@@ -95,6 +91,8 @@ func on_choice_selected(index: int) -> void:
 					"…
 
 You open your eyes a day or two later. You feel… fine?")
+					player.radiation = true
+					player.healthLoss = float(randi()%50)/10 +3 
 					event_ui.continue_button()
 				# Apply this choice's effects.
 		"DustDevil":
@@ -111,14 +109,14 @@ You open your eyes a day or two later. You feel… fine?")
 			if randi() % 2 == 0:
 					event_ui.type_message("SUCCESS: Fierce winds blow at you. Your rover is forced to shut down temporarily.
 The dust storm ends a few days later. You can move on.
--10% Power")
+-20% Power")
 					player.power -= 20
 					$"..".step(2)
 					event_ui.continue_button()
 
 			else:
 					event_ui.type_message("FAILURE: The immense walls of dust cloud the systems and invade every crevice. The storm doesn't fade for a whole week. When it finally does, it takes you an entire day to clean the dust away and get the rover moving again.
--20% Power")
+-40% Power")
 
 					$"..".step(8)
 					player.power -= 40
@@ -129,8 +127,8 @@ The dust storm ends a few days later. You can move on.
 		"SnowStorm":
 			if index == 0:
 				event_ui.type_message("The dusting of snow affects your vehicle little. As the frost forms around you, you are moved with wonder. Even on a distant planet like this, there were sights to behold. It makes you a little more hopeful about the journey ahead of you.
--10% Power")
-				player.power -= 10
+-20% Power")
+				player.power -= 20
 				event_ui.continue_button()
 			if index == 1:
 				event_ui.type_message("FAILURE: Before you knew it, frost had overcome your windshield. It started getting much colder in the rover, almost unbearably so. 
@@ -138,7 +136,7 @@ The dust storm ends a few days later. You can move on.
 It takes hours for the storm to pass. The cold got to you. You had to eat extra rations just to feel full.
 -20% Rations
 ")
-				player.rations -= 20
+				player.food -= 20
 				event_ui.continue_button()
 		"Geysers":
 			if index == 0:
@@ -169,11 +167,11 @@ func step():
 			timer.stop()
 			ui.message.hide()
 			match randi()%5:
-				0: callGeysers()#callDustStorm()
+				0: callDustStorm()
 				1: callGeysers() 
-				2: callGeysers()#callDustDevil()
-				3: callGeysers()#callSnowStorm()
-				4: callGeysers()#callDustDevil()
+				2: callDustDevil()
+				3: callDustDevil()
+				4: callSnowStorm()
 			animated_sprite.speed_scale = 0
 			daysSinceEvent = 0
 
