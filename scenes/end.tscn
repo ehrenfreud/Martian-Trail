@@ -1,5 +1,70 @@
 [gd_scene format=3 uid="uid://bcrr3v4803lwo"]
 
+[ext_resource type="Script" uid="uid://yug3ng62bhgj" path="res://scripts/end.gd" id="1_3d26k"]
+[ext_resource type="Texture2D" uid="uid://r8bs228nye1q" path="res://assets/endscreen.png" id="1_mwn6m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d26k"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(0, 0, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7m4f"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(700, 0, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvfni"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(0, 350, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4tl2"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(700, 350, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hmjt"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(0, 700, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5lv4"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(700, 700, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee763"]
+atlas = ExtResource("1_mwn6m")
+region = Rect2(0, 1050, 700, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uggp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d26k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7m4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvfni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4tl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hmjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5lv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee763")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="End" type="Node2D" unique_id=1719684420]
+script = ExtResource("1_3d26k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=639535114]
+scale = Vector2(1.5428572, 1.542857)
+sprite_frames = SubResource("SpriteFrames_3uggp")
+frame = 6
+frame_progress = 1.0

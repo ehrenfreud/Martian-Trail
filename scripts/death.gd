@@ -28,6 +28,8 @@ func death(message: String):
 				"[b]GAME OVER[/b][/center]"
 			)
 			pass
+		"oxygen":
+			pass
 		"battery":
 			deathMessage.text = (
 				"[center][b]WARNING! POWER RESERVES LOW![/b][/center] \n\n" +

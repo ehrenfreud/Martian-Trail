@@ -10,20 +10,36 @@ func _ready() -> void:
 	$Timer.start()
 	pass
 
-func step():
+func step(num: int):
 	if player.distanceFromBase < 0:
 		win()
 		pass
-	player.days += 1
-	player.food -= 1.6
-	player.oxygen -= 1.4
-	player.battery += 2
+	player.days += 1*num
+	player.food -= 1.4*num
+	player.oxygen -= 1.6*num
+	player.battery += 1*num
+	player.health -= player.healthLoss
 	if player.battery > 100:
 		player.battery = 100
+	
+	if player.hunger < 0:
+		player.healthLoss = 10
+	
+	if player.battery < 0:
+		death.death("battery")
+	elif player.oxygen < 0:
+		death.death("oxygen")
+	elif player.health < 0:
+		if player.radiation:
+			death.death("radiation")
+		else:
+			death.death("food")
+	
 	if player.moving:
 		player.distanceFromBase -= 160
 	player.water -= 0.25
-	EventHandler.step()
+	if num == 1:
+		EventHandler.step()
 	pass
 
 func win():
@@ -37,5 +53,5 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_timer_timeout() -> void:
-	step()
+	step(1)
 	pass
