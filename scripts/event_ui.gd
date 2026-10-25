@@ -58,7 +58,7 @@ func show_event_no_choices(text: String) -> void:
 		buttons[i].pressed.connect(on_choice_pressed.bind(i))
 	type_message(text)
 
-func show_event_array(texts: Array[String], choices: Array[String]) -> void:
+func show_event_array(texts: Array[String], choices: Array[String]):
 	is_typing = true
 	message.text = ""
 	show()

@@ -39,45 +39,40 @@ Outside, great winds sweep up walls of dust, hurling them at the rover. An enorm
 	pass
 func callGeysers() -> void:
 	currentEvent = "Geysers"
-	#event_ui.show_message("geysers")
 	geysersImage1.show()
 	geysersImage2.show()
 	var choices: Array[String] = ["<> Press on through the polar caps.","<> Navigate around the polar ice caps."]
 	var texts: Array[String] = ["**WARNING: POSSIBLE GEYSERS AHEAD!**", "You remember what little you can from your lessons on Mars. When the sun heats up dry ice underneath the polar caps, pockets of pressure build up- bursting outwards as geysers of pressurized CO2 and debris. If you press through the field, you'll continue as the plan entails, but debris from a geyser may damage your rover. If a serious blow is dealt to your rover, you don't know if you'll even be able to repair it"]
 	event_ui.show_event_array(texts, choices)
-	
-	
 	pass
+
 func callDustDevil() -> void:
 	currentEvent = "DustDevil"
-	#event_ui.show_message("dust devil")
 	dustDevilImage1.show()
 	dustDevilImage2.show()
 	event_ui.show_event_no_choices("Your rover spurs on at a steady pace. Everything seems to be according to plan. However, something's going on outside. The warm sun beaming down on the barren earth has created an updraft, and dust devils have formed around your rover before you have even realized.")
 	pass
+
 func callSnowStorm() -> void:
 	currentEvent = "SnowStorm"
-	#event_ui.show_message("snow storm")
 	snowStormImage1.show()
 	snowStormImage2.show()
-	var choices: Array[String] = ["<>Divert power to heater", "<>Thug it out"]
+	var choices: Array[String] = ["Divert power to heater", "Tough it out"]
 	event_ui.show_event("Frost starts to form on your windshield. Naturally, you were prepared for this. As the heaters fire up, the ice melts away. Unfortunately, it wasn't just happening on your windshield. Before your eyes, light dustings of snow start to cover the landscape around you.", choices)
 	pass
+
 func callWindStorm() -> void:
 	currentEvent = "WindStorm"
-	#event_ui.show_message("wind storm")
 	windStormImage1.show()
 	windStormImage2.show()
 	event_ui.show_event_no_choices("Wind gusts start to pick up and billow dust that covers solar panels")
-	
-	
 	pass
+
 func callSolarFlare() -> void:
 	currentEvent = "SolarFlare"
-	#event_ui.show_event("solar flare")
 	solarFlareImage1.show()
 	solarFlareImage2.show()
-	var choices: Array[String] = ["<> Play it safe: Hunker down","<> Risk it: Brave the solar flare"]
+	var choices: Array[String] = ["Play it safe: Hunker down","Risk it: Brave the solar flare"]
 	event_ui.show_event("**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**", 
 	choices)
 
@@ -91,6 +86,7 @@ func on_choice_selected(index: int) -> void:
 				event_ui.continue_button()
 			elif index == 1:
 				player.radiation = true
+				player.healthLoss = 7.15
 				if randi() % 2 == 0:
 					event_ui.type_message("SUCCESS: The rover presses on. While you can't dismiss the gnawing feeling in your stomach, you chalk it up to anxiety rather than radiation poisoning. You can't stop here: you must return.")
 					event_ui.continue_button()
@@ -103,16 +99,13 @@ You open your eyes a day or two later. You feel… fine?")
 				# Apply this choice's effects.
 		"DustDevil":
 			if randi() % 2 == 0:
-					event_ui.type_message("SUCCESS: Gritting your teeth, you push onwards. The swirling dust ended up being not as intense as you originally thought. When the dust devils came over your rover, they passed after merely light tremors. When the ordeal was complete, your craft had been wiped clean by the drafts. Maybe now, you wouldn't have to worry too much about power, at least for a small time.
-					")
-					
+					event_ui.type_message("SUCCESS: Gritting your teeth, you push onwards. The swirling dust ended up being not as intense as you originally thought. When the dust devils came over your rover, they passed after merely light tremors. When the ordeal was complete, your craft had been wiped clean by the drafts.")
 					event_ui.continue_button()
 
 			else:
 					event_ui.type_message("FAILURE: Another dust devil spins up, then another. Before you knew it, you were overcome by the swirling dust. You couldn't see a thing. The windows weren't the only thing being covered with dirt, though. Filtration systems were clogged. It took you a long time before you were ready to continue onwards.
 					-25% Power")
 					player.power -= 25
-
 					event_ui.continue_button()
 		"DustStorm":
 			if randi() % 2 == 0:
@@ -120,15 +113,14 @@ You open your eyes a day or two later. You feel… fine?")
 The dust storm ends a few days later. You can move on.
 -10% Power")
 					player.power -= 20
-
-					
-					
+					$"..".step(2)
 					event_ui.continue_button()
 
 			else:
 					event_ui.type_message("FAILURE: The immense walls of dust cloud the systems and invade every crevice. The storm doesn't fade for a whole week. When it finally does, it takes you an entire day to clean the dust away and get the rover moving again.
 -20% Power")
 
+					$"..".step(8)
 					player.power -= 40
 					event_ui.continue_button()
 		"WindStorm":
@@ -155,10 +147,9 @@ It takes hours for the storm to pass. The cold got to you. You had to eat extra 
 					event_ui.continue_button()
 				else:
 					death.death("geyser")
-					#event_ui.type_message("FAILURE: A blast of CO2 blew up near you, sending a chunk of ice flying into your rover. Immediately, it let you know just how big of a problem you had. Warning lights flashed, and alarms blared. Soon, your rover shut down. The damage was severe. It would never move again, and neither will you.")
-					#event_ui.continue_button()
 			if index == 1:
 				event_ui.type_message("You can't risk your life. Not when the threat of death is always looming over you. You spread a worksheet over your terminal, and calculate the new path.")
+				$"..".step(9)
 				event_ui.continue_button()
 				
 func step():
@@ -170,21 +161,21 @@ func step():
 		callSolarFlare()
 		solarFlare = true
 		pass
-	
-	daysSinceEvent += 1
-	if (randi()%100) < (0.5*daysSinceEvent*daysSinceEvent):
-		daysSinceEvent = 0
-		world.constant = 0
-		timer.stop()
-		ui.message.hide()
-		match randi()%5:
-			0: callGeysers()#callDustStorm()
-			1: callGeysers() 
-			2: callGeysers()#callDustDevil()
-			3: callGeysers()#callSnowStorm()
-			4: callGeysers()#callDustDevil()
-		animated_sprite.speed_scale = 0
-		daysSinceEvent = 0
+	else:
+		daysSinceEvent += 1
+		if (randi()%100) < (0.5*daysSinceEvent*daysSinceEvent):
+			daysSinceEvent = 0
+			world.constant = 0
+			timer.stop()
+			ui.message.hide()
+			match randi()%5:
+				0: callGeysers()#callDustStorm()
+				1: callGeysers() 
+				2: callGeysers()#callDustDevil()
+				3: callGeysers()#callSnowStorm()
+				4: callGeysers()#callDustDevil()
+			animated_sprite.speed_scale = 0
+			daysSinceEvent = 0
 
 
 func restart():
