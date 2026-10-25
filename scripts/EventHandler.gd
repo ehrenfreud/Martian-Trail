@@ -25,9 +25,15 @@ var list = ["dust_storm", "geysers", "solar flare",
 var daysSinceEvent: int = 0
 
 func callDustStorm() -> void:
-	event_ui.show_message("dust storm")
 	dustStormImage1.show()
 	dustStormImage2.show()
+	event_ui.show_message("Your P.A. beeps suddenly. The sharp trill snaps you out of your reverie.")
+	await get_tree().create_timer(1.0).timeout
+	event_ui.remove_message()
+	event_ui.show_message("**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**")
+	await get_tree().create_timer(1.0).timeout
+	event_ui.remove_message()
+	event_ui.show_message("Solar flares create extremely dangerous environments. Not only do they whip up strong storms on Mars's surface, but the acute radiation could cause fast and painful death through radiation poisoning. Your rover can set up strong radiation shielding, but in order to do it, it must stop moving. If you do, you might lose valuable time.")
 	pass
 func callGeysers() -> void:
 	event_ui.show_message("geysers")
@@ -107,6 +113,8 @@ func _ready() -> void:
 	windStormImage2.hide()
 	solarFlareImage1.hide()
 	solarFlareImage2.hide()
+	#await get_tree().create_timer(1.0).timeout 
+	
 	pass # Replace with function body.
 
 
