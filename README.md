@@ -28,15 +28,26 @@ None.
 
 ## Build from source
 
-Tell everyone how we can build/run your code. 
+**1. Download Godot Engine**
+You will need Godot Engine 4.7
+* Download it from (https://godotengine.org).
 
-```sh
-# Clone the project
-git clone https://github.com/Username/Project.git && cd project
+**2. Clone the repository**
+Clone this project to your using git clone
 
-# Install dependencies and run build
-bun i && bun run dev
-```
+
+**3. Open the project in Godot**
+1. Launch the **Godot Project Manager**.
+2. Click the **Import** button on the right panel.
+3. Browse to the cloned directory and select the `project.godot` file.
+4. Click **Import & Edit** to open the project in the editor.
+
+**4. Run the game**
+
+OR 
+
+Download Zip file and extract
+.
 
 ## Extras
 
