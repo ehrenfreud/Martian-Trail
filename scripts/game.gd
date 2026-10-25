@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func step():
 	player.days += 1
-	print(player.distanceFromBase)
 	if player.moving:
 		player.distanceFromBase -= 160
 	EventHandler.step()
