@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcjc4fgpc7581"
-path="res://.godot/imported/solarflareevent.png-908580550fe3aa281755b4665680797a.ctex"
+uid="uid://cirnwp57geh8h"
+path="res://.godot/imported/dustdevil.png-614b45038135c5ce817f32064ef078ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/solarflareevent.png"
-dest_files=["res://.godot/imported/solarflareevent.png-908580550fe3aa281755b4665680797a.ctex"]
+source_file="res://assets/dustdevil.png"
+dest_files=["res://.godot/imported/dustdevil.png-614b45038135c5ce817f32064ef078ab.ctex"]
 
 [params]
 

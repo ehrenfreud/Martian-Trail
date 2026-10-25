@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cirnwp57geh8h"
-path="res://.godot/imported/dustdevilevent.png-614b45038135c5ce817f32064ef078ab.ctex"
+uid="uid://jkwsym0lppum"
+path="res://.godot/imported/geyser.png-912237f96d9be9280a26dc1397d58580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dustdevilevent.png"
-dest_files=["res://.godot/imported/dustdevilevent.png-614b45038135c5ce817f32064ef078ab.ctex"]
+source_file="res://assets/geyser.png"
+dest_files=["res://.godot/imported/geyser.png-912237f96d9be9280a26dc1397d58580.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bty1vfchhhyda"
-path="res://.godot/imported/marsbackground.png-957ee1a53fe686558d10536ec3fbea7c.ctex"
+uid="uid://i25cticid5fl"
+path="res://.godot/imported/windstorm.png-c637a57e5aee21b12513429910313ad2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/marsbackground.png"
-dest_files=["res://.godot/imported/marsbackground.png-957ee1a53fe686558d10536ec3fbea7c.ctex"]
+source_file="res://assets/windstorm.png"
+dest_files=["res://.godot/imported/windstorm.png-c637a57e5aee21b12513429910313ad2.ctex"]
 
 [params]
 

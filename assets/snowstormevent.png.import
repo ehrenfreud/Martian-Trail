@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by4eax65o25vw"
-path="res://.godot/imported/snowstormevent.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"
+path="res://.godot/imported/snowstorm.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snowstormevent.png"
-dest_files=["res://.godot/imported/snowstormevent.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"]
+source_file="res://assets/snowstorm.png"
+dest_files=["res://.godot/imported/snowstorm.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"]
 
 [params]
 
