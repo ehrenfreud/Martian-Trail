@@ -44,25 +44,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
+atlas = ExtResource("8_trtic")
+region = Rect2(0, 0, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
+atlas = ExtResource("8_trtic")
+region = Rect2(700, 0, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca42v"]
+atlas = ExtResource("8_trtic")
+region = Rect2(0, 350, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysoc"]
+atlas = ExtResource("8_trtic")
+region = Rect2(700, 350, 700, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssvqc"]
+atlas = ExtResource("8_trtic")
+region = Rect2(0, 700, 700, 350)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
 atlas = ExtResource("8_trtic")
-region = Rect2(0, 0, 1400, 350)
+region = Rect2(700, 700, 700, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
 atlas = ExtResource("8_trtic")
-region = Rect2(0, 350, 1400, 350)
+region = Rect2(0, 1050, 700, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
 atlas = ExtResource("8_trtic")
-region = Rect2(0, 700, 1400, 350)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
-atlas = ExtResource("8_trtic")
-region = Rect2(0, 1050, 1400, 350)
+region = Rect2(700, 1050, 700, 350)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yq213"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trtic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir15t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca42v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rysoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssvqc")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_37s47")
 }, {
@@ -71,9 +102,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e1j6l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pl11u")
 }],
 "loop": 1,
 "name": &"default",
@@ -303,7 +331,7 @@ script = ExtResource("8_ir15t")
 
 [node name="UI" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
 
-[node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
+[node name="EventUI" parent="." unique_id=1576212497 instance=ExtResource("4_iywne")]
 offset_left = 15.0
 offset_top = -34.0
 offset_right = 15.0
