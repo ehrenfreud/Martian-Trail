@@ -2,6 +2,7 @@ extends Node
 
 @onready var event_ui = $"../EventUI"
 @onready var player = $"../Player"
+@onready var animated_sprite: AnimatedSprite2D = $"../Player/AnimatedSprite2D"
 @onready var world = $"../World"
 @onready var timer = $"../Timer"
 @onready var ui = $"../UI"
@@ -48,6 +49,11 @@ func step():
 		daysSinceEvent = 0
 	pass
 
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#_callDustStorm()
+
 func restart():
 	ui.show()
 	timer.start()
@@ -58,6 +64,7 @@ func restart():
 func _ready() -> void:
 	#hides events on start
 	dust_storm_image.hide()
+  
 	pass # Replace with function body.
 
 
