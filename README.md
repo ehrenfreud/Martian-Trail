@@ -46,7 +46,9 @@ Clone this project to your using git clone
 
 OR 
 
-Download Zip file and extract
+**1. Clone the repository**
+
+**2. Run Martian Trail.exe**
 .
 
 ## Extras
