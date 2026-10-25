@@ -10,11 +10,9 @@ var typing_speed: float = 0.035
 func _ready() -> void:
 	pass
 
-func show_message(text: String) -> void:
-	message.text = text
-
-func _on_continue_pressed() -> void:
-	hide()
-
-func _process(delta: float) -> void:
-	show_message("Distance: " + str(player.distanceFromBase))
+func _process(_delta: float) -> void:
+	message.text = (
+		"[center][b]~~~~~~~~~~~~~~~~~~~~|[/b] DAY %2s [b]|~~~~~~~~~~~~~~~~~~~~[/b]\n" %str(player.days) +
+		"Distance from Martian Base: [b] %4s [/b] / 7000 km[/center]" %str(player.distanceFromBase) +
+		""
+		)
