@@ -6,6 +6,7 @@ extends Node
 @onready var world = $"../World"
 @onready var timer = $"../Timer"
 @onready var ui = $"../UI"
+@onready var death = $"../Death"
 
 @onready var dustStormImage1 = $DustStormImage1
 @onready var dustStormImage2 = $DustStormImage2
@@ -31,14 +32,10 @@ func callDustStorm() -> void:
 	currentEvent = "DustStorm"
 	dustStormImage1.show()
 	dustStormImage2.show()
-	#event_ui.show_event("Your P.A. beeps suddenly. The sharp trill snaps you out of your reverie.")
-	#await get_tree().create_timer(1.0).timeout
-	#event_ui.remove_message()
-	
-	 
-	#await get_tree().create_timer(1.0).timeout
-	#event_ui.remove_message()
-	#event_ui.show_message("Solar flares create extremely dangerous environments. Not only do they whip up strong storms on Mars's surface, but the acute radiation could cause fast and painful death through radiation poisoning. Your rover can set up strong radiation shielding, but in order to do it, it must stop moving. If you do, you might lose valuable time.")
+	event_ui.show_event_no_choices("The first thing you hear is the buzzing. 
+
+Outside, great winds sweep up walls of dust, hurling them at the rover. An enormous storm has overtaken your vehicle. The red dust covers your craft.
+")
 	pass
 func callGeysers() -> void:
 	currentEvent = "Geysers"
@@ -56,26 +53,32 @@ func callDustDevil() -> void:
 	#event_ui.show_message("dust devil")
 	dustDevilImage1.show()
 	dustDevilImage2.show()
+	event_ui.show_event_no_choices("Your rover spurs on at a steady pace. Everything seems to be according to plan. However, something's going on outside. The warm sun beaming down on the barren earth has created an updraft, and dust devils have formed around your rover before you have even realized.")
 	pass
 func callSnowStorm() -> void:
 	currentEvent = "SnowStorm"
 	#event_ui.show_message("snow storm")
 	snowStormImage1.show()
 	snowStormImage2.show()
+	var choices: Array[String] = ["<>Divert power to heater", "<>Thug it out"]
+	event_ui.show_event("Frost starts to form on your windshield. Naturally, you were prepared for this. As the heaters fire up, the ice melts away. Unfortunately, it wasn't just happening on your windshield. Before your eyes, light dustings of snow start to cover the landscape around you.", choices)
 	pass
 func callWindStorm() -> void:
 	currentEvent = "WindStorm"
 	#event_ui.show_message("wind storm")
 	windStormImage1.show()
 	windStormImage2.show()
+	event_ui.show_event_no_choices("Wind gusts start to pick up and billow dust that covers solar panels")
+	
+	
 	pass
 func callSolarFlare() -> void:
 	currentEvent = "SolarFlare"
 	#event_ui.show_event("solar flare")
 	solarFlareImage1.show()
 	solarFlareImage2.show()
-	var choices: Array[String] = ["<> Play it safe: Hunker down","<> Risk it: Brave the storm"]
-	event_ui.show_event(["**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**"], 
+	var choices: Array[String] = ["<> Play it safe: Hunker down","<> Risk it: Brave the solar flare"]
+	event_ui.show_event("**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**", 
 	choices)
 
 func on_choice_selected(index: int) -> void:
@@ -87,6 +90,7 @@ func on_choice_selected(index: int) -> void:
 				event_ui.type_message("** The lights dim as your rover retracts into itself. You feel a pang in your chest, thinking about the time you might lose… but at least you know you'll be safe. ")
 				event_ui.continue_button()
 			elif index == 1:
+				player.radiation = true
 				if randi() % 2 == 0:
 					event_ui.type_message("SUCCESS: The rover presses on. While you can't dismiss the gnawing feeling in your stomach, you chalk it up to anxiety rather than radiation poisoning. You can't stop here: you must return.")
 					event_ui.continue_button()
@@ -98,33 +102,61 @@ You open your eyes a day or two later. You feel… fine?")
 					event_ui.continue_button()
 				# Apply this choice's effects.
 		"DustDevil":
-			if index == 0:
-					print("Dust storm: take cover")
-			if index == 1:
-					print("Dust storm: push through")
+			if randi() % 2 == 0:
+					event_ui.type_message("SUCCESS: Gritting your teeth, you push onwards. The swirling dust ended up being not as intense as you originally thought. When the dust devils came over your rover, they passed after merely light tremors. When the ordeal was complete, your craft had been wiped clean by the drafts. Maybe now, you wouldn't have to worry too much about power, at least for a small time.
+					")
+					
+					event_ui.continue_button()
+
+			else:
+					event_ui.type_message("FAILURE: Another dust devil spins up, then another. Before you knew it, you were overcome by the swirling dust. You couldn't see a thing. The windows weren't the only thing being covered with dirt, though. Filtration systems were clogged. It took you a long time before you were ready to continue onwards.
+					-25% Power")
+					player.power -= 25
+
+					event_ui.continue_button()
 		"DustStorm":
-			if index == 0:
-				print("")
-			if index == 1:
-				print("")
+			if randi() % 2 == 0:
+					event_ui.type_message("SUCCESS: Fierce winds blow at you. Your rover is forced to shut down temporarily.
+The dust storm ends a few days later. You can move on.
+-10% Power")
+					player.power -= 20
+
+					
+					
+					event_ui.continue_button()
+
+			else:
+					event_ui.type_message("FAILURE: The immense walls of dust cloud the systems and invade every crevice. The storm doesn't fade for a whole week. When it finally does, it takes you an entire day to clean the dust away and get the rover moving again.
+-20% Power")
+
+					player.power -= 40
+					event_ui.continue_button()
 		"WindStorm":
-			if index == 0:
-				print("")
-			if index == 1:
-				print("")
+			restart()
+			callDustStorm()
 		"SnowStorm":
 			if index == 0:
-				print("")
+				event_ui.type_message("The dusting of snow affects your vehicle little. As the frost forms around you, you are moved with wonder. Even on a distant planet like this, there were sights to behold. It makes you a little more hopeful about the journey ahead of you.
+-10% Power")
+				player.power -= 10
+				event_ui.continue_button()
 			if index == 1:
-				print("")
+				event_ui.type_message("FAILURE: Before you knew it, frost had overcome your windshield. It started getting much colder in the rover, almost unbearably so. 
+				
+It takes hours for the storm to pass. The cold got to you. You had to eat extra rations just to feel full.
+-20% Rations
+")
+				player.rations -= 20
+				event_ui.continue_button()
 		"Geysers":
 			if index == 0:
 				if randi() % 2 == 0:
 					event_ui.type_message("SUCCESS: By sheer luck, you dodge any possible ruination, saving yourself from an unfortunate end. It takes you a week, but you emerge on the other side of the polar caps unharmed.")
 					event_ui.continue_button()
 				else:
-					event_ui.type_message("FAILURE: A blast of CO2 blew up near you, sending a chunk of ice flying into your rover. Immediately, it let you know just how big of a problem you had. Warning lights flashed, and alarms blared. Soon, your rover shut down. The damage was severe. It would never move again, and neither will you.")
-					event_ui.continue_button()
+					death.death("geyser")
+					#event_ui.type_message("FAILURE: A blast of CO2 blew up near you, sending a chunk of ice flying into your rover. Immediately, it let you know just how big of a problem you had. Warning lights flashed, and alarms blared. Soon, your rover shut down. The damage was severe. It would never move again, and neither will you.")
+					#event_ui.continue_button()
 			if index == 1:
 				event_ui.type_message("You can't risk your life. Not when the threat of death is always looming over you. You spread a worksheet over your terminal, and calculate the new path.")
 				event_ui.continue_button()
@@ -146,11 +178,11 @@ func step():
 		timer.stop()
 		ui.message.hide()
 		match randi()%5:
-			0: callDustStorm()
+			0: callGeysers()#callDustStorm()
 			1: callGeysers() 
-			2: callDustDevil()
-			3: callSnowStorm()
-			4: callWindStorm()
+			2: callGeysers()#callDustDevil()
+			3: callGeysers()#callSnowStorm()
+			4: callGeysers()#callDustDevil()
 		animated_sprite.speed_scale = 0
 		daysSinceEvent = 0
 

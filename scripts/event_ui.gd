@@ -42,6 +42,22 @@ func show_event(text: String, choices: Array[String]) -> void:
 		buttons[i].pressed.connect(on_choice_pressed.bind(i))
 	type_message(text)
 
+func show_event_no_choices(text: String) -> void:
+	is_typing = true
+	message.text = ""
+	show()
+	
+	buttons[0].show()
+	buttons[0].text = "Continue"
+	buttons[0].disabled = true
+	buttons[1].hide()
+		
+		
+			
+	for i in range(buttons.size()):
+		buttons[i].pressed.connect(on_choice_pressed.bind(i))
+	type_message(text)
+
 func show_event_array(texts: Array[String], choices: Array[String]) -> void:
 	is_typing = true
 	message.text = ""

@@ -1,6 +1,6 @@
 <div align="center">
 
-  # The Original Martian Trail
+  # Martian Trail
 
   After a blackout in communications leaves you in the dark, far from your base on Mars, you must use your best judgement to navigate back to your base with potentially life-saving water reserves.
 

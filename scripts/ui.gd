@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	stats.text = (
 		"[center]---| STATS |---[/center]\n" + 
 		"Hull Integrity: " + str(player.hull_integrity) + "%\n" +
-		"Rover Battery: " + str(player.battery) + "%\n" +
+		"Rover Power: " + str(player.power) + "%\n" +
 		"Remaining Rations: %6.2f" %player.food + "%\n" +
 		"Remaining Oxygen: %6.2f" %player.oxygen + "%"
 		)
