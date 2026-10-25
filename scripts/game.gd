@@ -10,8 +10,10 @@ func _ready() -> void:
 
 func step():
 	player.days += 1
+	player.food -= 1.6
 	if player.moving:
 		player.distanceFromBase -= 160
+	player.water -= 0.25
 	EventHandler.step()
 	pass
 
