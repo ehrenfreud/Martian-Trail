@@ -19,22 +19,17 @@
 
 </div>
 
-What did you build? What problem does it solve? Tell us more about what you did!
+Our game repackages the very real naturally occurring dangers on Mars into an Oregon Trail inspired game, where you are confronted with different events. These events are all phenomena that can occur on Mars, and any aspiring astronaut must know what they are and how to handle them. This game's intended use is to educate users on these phenomena, so that any aspirant will know what they are facing when exploring Mars.
 
-Did you use any external tools or APIs? Document them here. Make sure to indicate where your boilerplate code comes from. Indicate any AI generated/assisted code here as well.
+No external APIs, tools, or AI assisted/generated work was used in the making of this project.
 
 ## Prerequisites
 
-Tell everyone what kind of tools are needed to build/run your code.
-
-```sh
-# Keep your tools up to date!
-bun upgrade
-```
+None.
 
 ## Build from source
 
-Tell everyone how we can build/run your code.
+Tell everyone how we can build/run your code. 
 
 ```sh
 # Clone the project
