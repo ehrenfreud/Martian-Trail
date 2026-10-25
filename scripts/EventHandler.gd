@@ -23,6 +23,7 @@ extends Node
 var list = ["dust_storm", "geysers", "solar flare", 
 "dust_devils", "snow_storms", "wind_storms"]
 var daysSinceEvent: int = 0
+var solarFlare: bool = false
 
 func callDustStorm() -> void:
 	dustStormImage1.show()
@@ -62,8 +63,17 @@ func callSolarFlare() -> void:
 
 
 func step():
+	if player.distanceFromBase < 3500 and solarFlare == false:
+		daysSinceEvent = 0
+		world.constant = 0
+		timer.stop()
+		ui.message.hide()
+		callSolarFlare()
+		solarFlare = true
+		pass
+	
 	daysSinceEvent += 1
-	if (randi()%100) < (daysSinceEvent*3):
+	if (randi()%100) < (0.5*daysSinceEvent*daysSinceEvent):
 		daysSinceEvent = 0
 		world.constant = 0
 		timer.stop()
@@ -77,9 +87,6 @@ func step():
 		animated_sprite.speed_scale = 0
 		daysSinceEvent = 0
 
-	
-	
-	
 
 func restart():
 	ui.message.show()
