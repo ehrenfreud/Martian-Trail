@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmqdke5gmfbtp"]
+
+[ext_resource type="Script" uid="uid://chtb1y53t52pc" path="res://scripts/title_screen.gd" id="1_fgkus"]
+
+[node name="title_screen" type="Control" unique_id=296835181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fgkus")
+
+[node name="Start" type="Button" parent="." unique_id=315092881]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Image" type="Sprite2D" parent="." unique_id=551588589]

@@ -20,9 +20,9 @@ script = ExtResource("1_byv46")
 [node name="Panel" type="Panel" parent="." unique_id=278626328]
 layout_mode = 0
 offset_left = -495.0
-offset_top = 87.0
+offset_top = 90.0
 offset_right = 152.0
-offset_bottom = 323.0
+offset_bottom = 326.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_arrcy")
 
 [node name="Message" type="RichTextLabel" parent="Panel" unique_id=963779275]
