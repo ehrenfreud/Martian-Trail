@@ -56,6 +56,7 @@ func callDustDevil() -> void:
 	#event_ui.show_message("dust devil")
 	dustDevilImage1.show()
 	dustDevilImage2.show()
+	event_ui.show_event_no_choices("Your rover spurs on at a steady pace. Everything seems to be according to plan. However, something's going on outside. The warm sun beaming down on the barren earth has created an updraft, and dust devils have formed around your rover before you have even realized.")
 	pass
 func callSnowStorm() -> void:
 	currentEvent = "SnowStorm"
@@ -101,10 +102,19 @@ You open your eyes a day or two later. You feel… fine?
 					event_ui.continue_button()
 				# Apply this choice's effects.
 		"DustDevil":
-			if index == 0:
-					print("Dust storm: take cover")
-			if index == 1:
-					print("Dust storm: push through")
+			if randi() % 2 == 0:
+					event_ui.type_message("SUCCESS: Gritting your teeth, you push onwards. The swirling dust ended up being not as intense as you originally thought. When the dust devils came over your rover, they passed after merely light tremors. When the ordeal was complete, your craft had been wiped clean by the drafts. Maybe now, you wouldn't have to worry too much about power, at least for a small time. 
+
+					+10% Power")
+					player.power += 10
+					event_ui.continue_button()
+
+			else:
+					event_ui.type_message("FAILURE: Another dust devil spins up, then another. Before you knew it, you were overcome by the swirling dust. You couldn't see a thing. The windows weren't the only thing being covered with dirt, though. Filtration systems were clogged. It took you a long time before you were ready to continue onwards.
+					-10% Power")
+					player.power -= 10
+
+					event_ui.continue_button()
 		"DustStorm":
 			if index == 0:
 				print("")

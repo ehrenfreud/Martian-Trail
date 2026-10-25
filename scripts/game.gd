@@ -16,9 +16,9 @@ func step():
 	player.days += 1
 	player.food -= 1.6
 	player.oxygen -= 1.4
-	player.battery += 2
-	if player.battery > 100:
-		player.battery = 100
+	player.power += 2
+	if player.power > 100:
+		player.power = 100
 	if player.moving:
 		player.distanceFromBase -= 160
 	player.water -= 0.25
