@@ -341,7 +341,6 @@ offset_bottom = -34.0
 wait_time = 1.5
 
 [node name="Death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
-visible = false
 z_index = 50
 
 [node name="End" parent="." unique_id=1719684420 instance=ExtResource("15_ir15t")]
