@@ -21,6 +21,6 @@ func _process(_delta: float) -> void:
 		"[center]---| STATS |---[/center]\n" + 
 		"Hull Integrity: " + str(player.hull_integrity) + "%\n" +
 		"Rover Battery: " + str(player.battery) + "%\n" +
-		"Remaining Rations: " + str(player.food) + "%\n" +
-		"Remaining Oxygen: " + str(player.oxygen) + "%"
+		"Remaining Rations: %6.2f" %player.food + "%\n" +
+		"Remaining Oxygen: %6.2f" %player.oxygen + "%"
 		)
