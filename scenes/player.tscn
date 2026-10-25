@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://dsw6tk3vc150s"]
 
 [ext_resource type="Script" uid="uid://s5h1vyr167ka" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://b4iy7hyiaghbg" path="res://assets/roverspritesheet.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://b4iy7hyiaghbg" path="res://assets/rover.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://2wx6gdujue41" path="res://scripts/animated_sprite_2d.gd" id="3_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_qhqgy")
-region = Rect2(0, 0, 5600, 2800)
+region = Rect2(0, 0, 300, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
-region = Rect2(0, 2800, 5600, 2800)
+region = Rect2(0, 150, 300, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_qhqgy")
-region = Rect2(0, 5600, 5600, 2800)
+region = Rect2(0, 300, 300, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qhqgy")
-region = Rect2(0, 8400, 5600, 2800)
+region = Rect2(0, 450, 300, 150)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3j1hy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca42v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -36,7 +36,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tuyoq")
 }],
 "loop": 1,
-"name": &"drive",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -44,8 +44,6 @@ animations = [{
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=570100674]
-position = Vector2(-4, -4)
-scale = Vector2(0.043794643, 0.043794643)
-sprite_frames = SubResource("SpriteFrames_3j1hy")
-animation = &"drive"
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_ca42v")
 script = ExtResource("3_dqkch")

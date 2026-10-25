@@ -3,13 +3,16 @@ extends Node2D
 @onready var event_ui = $EventUI
 @onready var ui = $UI
 @onready var player = $Player
+@onready var death = $Death
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#event_ui.show_message("A dust storm is approaching your rover!")
+	$Timer.start()
 	pass
 
 func step():
+	if player.days == 2:
+		death.death("geyser")
 	if player.distanceFromBase < 0:
 		win()
 		pass

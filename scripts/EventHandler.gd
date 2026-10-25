@@ -94,10 +94,7 @@ func on_choice_selected(index: int) -> void:
 					event_ui.type_two_messages("FAILURE: You continue onwards. It only takes a minute before you feel immense nausea in your stomach. It progresses to a rending pain in your chest, then the rest of your body. Your cells, one by one, are crumbling… you feel fatigued. You are so, so… tired. Your eyelids close, and you collapse onto the terminal. The last thing you do before you give in to your exhaustion is slam the button, initializing the shutdown sequence. You have gained some ground, but at what cost?",
 					"…
 
-You open your eyes a day or two later. You feel… fine? 
-
-(Gain Radiation Poisoning)
-")
+You open your eyes a day or two later. You feel… fine?")
 					event_ui.continue_button()
 				# Apply this choice's effects.
 		"DustDevil":

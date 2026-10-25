@@ -234,8 +234,6 @@ script = ExtResource("1_iywne")
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
 z_index = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661965181]
-
 [node name="Sun" type="Sprite2D" parent="." unique_id=221500648]
 z_index = 8
 position = Vector2(-357.00003, -215.99998)
@@ -341,9 +339,9 @@ offset_bottom = -34.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1510224209]
 wait_time = 1.5
-autostart = true
 
-[node name="death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
+[node name="Death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
+z_index = 50
 
 [node name="End" parent="." unique_id=1719684420 instance=ExtResource("15_ir15t")]
 
