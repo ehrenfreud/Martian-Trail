@@ -204,6 +204,7 @@ script = ExtResource("1_iywne")
 [node name="Player" parent="." unique_id=1846436688 instance=ExtResource("3_iywne")]
 z_index = 10
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661965181]
 [node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
 offset_left = 15.0
 offset_top = -34.0
@@ -306,6 +307,12 @@ script = ExtResource("8_ir15t")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=86995643]
 
 [node name="UI" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
+
+[node name="EventUI" parent="." unique_id=2026063733 instance=ExtResource("4_iywne")]
+offset_left = 15.0
+offset_top = -36.0
+offset_right = 15.0
+offset_bottom = -36.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1510224209]
 wait_time = 1.5
