@@ -11,8 +11,6 @@ func _ready() -> void:
 	pass
 
 func step():
-	if player.days == 2:
-		death.death("geyser")
 	if player.distanceFromBase < 0:
 		win()
 		pass
