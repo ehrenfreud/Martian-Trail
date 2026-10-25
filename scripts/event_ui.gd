@@ -47,11 +47,10 @@ func show_event_no_choices(text: String) -> void:
 	message.text = ""
 	show()
 	
-	for i in range(buttons.size()):
-		buttons[i].text = "Continue"
-		print(i)
-		buttons[i].show()
-		buttons[i].disabled = true
+	buttons[0].show()
+	buttons[0].text = "Continue"
+	buttons[0].disabled = true
+	buttons[1].hide()
 		
 		
 			
