@@ -52,19 +52,19 @@ func callGeysers() -> void:
 	pass
 func callDustDevil() -> void:
 	currentEvent = "DustDevil"
-	event_ui.show_message("dust devil")
+	#event_ui.show_message("dust devil")
 	dustDevilImage1.show()
 	dustDevilImage2.show()
 	pass
 func callSnowStorm() -> void:
 	currentEvent = "SnowStorm"
-	event_ui.show_message("snow storm")
+	#event_ui.show_message("snow storm")
 	snowStormImage1.show()
 	snowStormImage2.show()
 	pass
 func callWindStorm() -> void:
 	currentEvent = "WindStorm"
-	event_ui.show_message("wind storm")
+	#event_ui.show_message("wind storm")
 	windStormImage1.show()
 	windStormImage2.show()
 	pass
