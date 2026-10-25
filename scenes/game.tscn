@@ -139,26 +139,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_suyxu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
+atlas = ExtResource("10_ca42v")
 region = Rect2(0, 0, 700, 350)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgl2t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_suyxu"]
+atlas = ExtResource("10_ca42v")
 region = Rect2(0, 350, 700, 350)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qouja"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgl2t"]
+atlas = ExtResource("10_ca42v")
 region = Rect2(0, 700, 700, 350)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0e2td"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pl11u")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_suyxu")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sgl2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qouja")
 }],
 "loop": 1,
 "name": &"default",
