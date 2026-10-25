@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by4eax65o25vw"
-path="res://.godot/imported/snowstorm.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"
+uid="uid://c0cb8srxwgr4s"
+path="res://.godot/imported/roverdeath.png-17480ec20b659a51cd4fcba6a76124e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snowstorm.png"
-dest_files=["res://.godot/imported/snowstorm.png-1b3821bfd8f8fd57e742db17e4f6c4aa.ctex"]
+source_file="res://assets/roverdeath.png"
+dest_files=["res://.godot/imported/roverdeath.png-17480ec20b659a51cd4fcba6a76124e7.ctex"]
 
 [params]
 
