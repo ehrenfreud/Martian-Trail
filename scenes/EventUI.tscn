@@ -20,9 +20,9 @@ script = ExtResource("1_byv46")
 [node name="Panel" type="Panel" parent="." unique_id=278626328]
 layout_mode = 0
 offset_left = -495.0
-offset_top = 89.0
+offset_top = 87.0
 offset_right = 152.0
-offset_bottom = 325.0
+offset_bottom = 323.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_arrcy")
 
 [node name="Message" type="RichTextLabel" parent="Panel" unique_id=963779275]
@@ -36,27 +36,27 @@ text = "Dust storm approaching!
 
 [node name="Button1" type="Button" parent="Panel" unique_id=1555691432]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 148.0
-offset_right = 176.53847
-offset_bottom = 210.0
+offset_left = 29.0
+offset_top = 158.0
+offset_right = 300.0
+offset_bottom = 220.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_byv46")
 text = "Continue"
 
 [node name="Button2" type="Button" parent="Panel" unique_id=1422884004]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 149.0
-offset_right = 382.53845
-offset_bottom = 211.0
+offset_left = 349.0
+offset_top = 158.0
+offset_right = 619.0
+offset_bottom = 220.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_byv46")
 text = "Continue"
 
-[node name="Button3" type="Button" parent="Panel" unique_id=481085380]
+[node name="Continue" type="Button" parent="Panel" unique_id=1381468112]
 layout_mode = 0
-offset_left = 445.0
-offset_top = 149.0
-offset_right = 578.53845
-offset_bottom = 211.0
+offset_left = 29.0
+offset_top = 158.0
+offset_right = 300.0
+offset_bottom = 220.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_byv46")
 text = "Continue"
