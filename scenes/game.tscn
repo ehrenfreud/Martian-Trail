@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://by4eax65o25vw" path="res://assets/snowstormevent.png" id="10_ca42v"]
 [ext_resource type="Texture2D" uid="uid://i25cticid5fl" path="res://assets/windstormevent.png" id="11_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dcjc4fgpc7581" path="res://assets/solarflareevent.png" id="12_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://db4ifk7wveqr7" path="res://scenes/death.tscn" id="15_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bcrr3v4803lwo" path="res://scenes/end.tscn" id="15_ir15t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_264po"]
 atlas = ExtResource("7_kvuet")
@@ -340,5 +342,9 @@ offset_bottom = -34.0
 [node name="Timer" type="Timer" parent="." unique_id=1510224209]
 wait_time = 1.5
 autostart = true
+
+[node name="death" parent="." unique_id=74460387 instance=ExtResource("15_ca42v")]
+
+[node name="End" parent="." unique_id=1719684420 instance=ExtResource("15_ir15t")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

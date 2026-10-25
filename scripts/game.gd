@@ -1,6 +1,7 @@
 extends Node2D
 @onready var EventHandler = $EventHandler
 @onready var event_ui = $EventUI
+@onready var ui = $UI
 @onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,9 @@ func _ready() -> void:
 	pass
 
 func step():
+	if player.distanceFromBase < 0:
+		win()
+		pass
 	player.days += 1
 	player.food -= 1.6
 	player.oxygen -= 1.4
@@ -19,6 +23,13 @@ func step():
 		player.distanceFromBase -= 160
 	player.water -= 0.25
 	EventHandler.step()
+	pass
+
+func win():
+	$Timer.stop()
+	ui.message.hide()
+	ui.stats.hide()
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

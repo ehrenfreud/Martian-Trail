@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://db4ifk7wveqr7"]
+
+[ext_resource type="Script" uid="uid://bbt1tb8bmha0x" path="res://scripts/death.gd" id="1_0hhgj"]
+
+[node name="death" type="Node2D" unique_id=74460387]
+script = ExtResource("1_0hhgj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=489901522]
