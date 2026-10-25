@@ -44,11 +44,7 @@ Clone this project to your using git clone
 
 **4. Run the game**
 
-OR 
 
-**1. Clone the repository**
-
-**2. Run Martian Trail.exe**
 .
 
 ## Extras
