@@ -15,9 +15,7 @@ var moving: bool = 1
 @export var move_speed: float = 100.0
 
 func _ready() -> void:
-	print("Mars expedition initialized!")
-	print("Health: ", health)
-	print("Water: ", water)
+	pass
 	
 
 # Keep your existing expedition variables above or below this.
