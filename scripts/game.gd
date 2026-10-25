@@ -29,7 +29,6 @@ func win():
 	$Timer.stop()
 	ui.message.hide()
 	ui.stats.hide()
-	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

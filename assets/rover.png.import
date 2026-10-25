@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4iy7hyiaghbg"
-path="res://.godot/imported/rover.png-450a10aeed55ba5c5b4d30d13f66686c.ctex"
+path="res://.godot/imported/rover.png-6f73e76ff2a148365dd540211c1758c9.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/rover.png"
-dest_files=["res://.godot/imported/rover.png-450a10aeed55ba5c5b4d30d13f66686c.ctex"]
+dest_files=["res://.godot/imported/rover.png-6f73e76ff2a148365dd540211c1758c9.ctex"]
 
 [params]
 

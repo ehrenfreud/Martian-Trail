@@ -1,15 +1,22 @@
 extends Node2D
 
 @onready var ui = $"../UI"
+@onready var player = $"../Player"
+@onready var timer = $"../Timer"
 
 func death():
-	$"../Timer".stop()
-	$"../Player".hide()
+	timer.stop()
+	player.hide()
+	show()
+	$AnimatedSprite2D.play()
 	pass
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	hide()
+	pass
 
 func _process(_delta: float) -> void:
+	if player.days == 3:
+		death()
 	pass

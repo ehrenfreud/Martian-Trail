@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcjc4fgpc7581"
-path="res://.godot/imported/solarflare.png-908580550fe3aa281755b4665680797a.ctex"
+path="res://.godot/imported/solarflare.png-de7d9bc4f97c6cdcd0e50872c2d2006d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/solarflare.png"
-dest_files=["res://.godot/imported/solarflare.png-908580550fe3aa281755b4665680797a.ctex"]
+dest_files=["res://.godot/imported/solarflare.png-de7d9bc4f97c6cdcd0e50872c2d2006d.ctex"]
 
 [params]
 
