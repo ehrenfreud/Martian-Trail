@@ -4,6 +4,7 @@ extends Node2D
 @onready var ui = $UI
 @onready var player = $Player
 @onready var death = $Death
+@onready var end = $End
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,34 +12,34 @@ func _ready() -> void:
 	pass
 
 func step(num: int):
-	if player.distanceFromBase < 0:
+	if player.distanceFromBase < 160:
 		win()
 		pass
-	player.days += 1*num
-	player.food -= 1.4*num
-	player.oxygen -= 1.6*num
-	player.battery += 1*num
-	player.health -= player.healthLoss
-	if player.battery > 100:
-		player.battery = 100
-	
-	if player.hunger < 0:
-		player.healthLoss = 10
-	
-	if player.battery < 0:
-		death.death("battery")
-	elif player.oxygen < 0:
-		death.death("oxygen")
-	elif player.health < 0:
-		if player.radiation:
-			death.death("radiation")
-		else:
-			death.death("food")
-	
-	if player.moving:
-		player.distanceFromBase -= 160
-	player.water -= 0.25
-	if num == 1:
+	else:
+		player.days += 1*num
+		player.food -= 1.4*num
+		player.oxygen -= 1.6*num
+		player.power += 1*num
+		player.health -= player.healthLoss*num
+		player.water -= 0.25*num
+		if player.power > 100:
+			player.power = 100
+		
+		if player.food < 0:
+			player.healthLoss = 10
+		
+		if player.power < 0:
+			death.death("battery")
+		elif player.oxygen < 0:
+			death.death("oxygen")
+		elif player.health < 0:
+			if player.radiation:
+				death.death("radiation")
+			else:
+				death.death("food")
+		
+		if num == 1:
+			player.distanceFromBase -= 160
 		EventHandler.step()
 	pass
 
@@ -46,6 +47,7 @@ func win():
 	$Timer.stop()
 	ui.message.hide()
 	ui.stats.hide()
+	end.win()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

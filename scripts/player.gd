@@ -10,7 +10,6 @@ extends CharacterBody2D
 
 var distanceFromBase: int = 7000
 var days: int = 0
-var moving: bool = 1
 var healthLoss = 0
 var radiation = false
 

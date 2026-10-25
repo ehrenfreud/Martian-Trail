@@ -60,6 +60,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d26k"]
+bg_color = Color(0.019607844, 0.023529412, 0.039215688, 0.40784314)
+
 [node name="End" type="Node2D" unique_id=1719684420]
 script = ExtResource("1_3d26k")
 
@@ -68,3 +71,19 @@ scale = Vector2(1.5428572, 1.542857)
 sprite_frames = SubResource("SpriteFrames_3uggp")
 frame = 6
 frame_progress = 1.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1689761477]
+offset_left = -498.0
+offset_top = -318.0
+offset_right = 497.0
+offset_bottom = 311.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3d26k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1777482722]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 67.0
+offset_right = 905.0
+offset_bottom = 565.0
+bbcode_enabled = true
+text = "placeholder"

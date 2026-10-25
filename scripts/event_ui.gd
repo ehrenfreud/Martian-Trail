@@ -7,7 +7,7 @@ extends Control
 @onready var timer: Timer = $"../Timer"
 @onready var eventHandler = $"../EventHandler"
 
-var typing_speed: float = 0.03 #was 0.065
+var typing_speed: float = 0.003 #was 0.065
 var is_typing = false
 
 signal choice_selected(choice_index: int)
@@ -139,6 +139,8 @@ func on_choice_pressed(index: int) -> void:
 		return
 	print("button index: " + str(index))
 	choice_selected.emit(index)
+	buttons[0].pressed.connect(on_choice_pressed.unbind(0))
+	buttons[1].pressed.connect(on_choice_pressed.unbind(1))
 
 func continue_button() -> void:
 	continueButton.visible = true

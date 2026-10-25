@@ -29,6 +29,13 @@ func death(message: String):
 			)
 			pass
 		"oxygen":
+			deathMessage.text = (
+				"\n\n\n\n[center][b]WARNING: OXYGEN LEVEL CRITICAL[\b] \n
+				The last voice you would hear was the rover's repeated automated warnings, almost taunting you. " +
+				"There is no oxygen outside of the rover, or anywhere near it. As your vision darkened and blurred, " +
+				"all you could do was sit and wait for death to come. \n\n
+				[b]GAME OVER[/b][/center]"
+			)
 			pass
 		"battery":
 			deathMessage.text = (
@@ -56,6 +63,18 @@ func death(message: String):
 			)
 			pass
 		"radiation":
+			deathMessage.text = (
+				"[center]When it comes, it all comes at once. You feel a wave of pain crashing into your body. " +
+				"Sharp pains cry out in every corner of your body. Your legs buckle, and drop beneath you. " +
+				"You can't hold your stomach, it pours out in front of you in an ugly display. " +
+				"Your chest fires with acute pressure, and your head pounds with pain. \n
+				Every part of your body is giving up at once. With a striking realization that hits you harder than the headache, " +
+				"you realized your pain was never getting better. For the past 2 weeks, you have been a dead man walking. \n
+				You roll onto your back, staring up at the ceiling as everything fades to black. " +
+				"Your first regret is that you could not bring back the water as you intended. 
+				Your last… that you didn't get to see the sky, before it all faded to nothing. \n
+				[b]GAME OVER[/b][/center]"
+			)
 			pass
 		"geyser":
 			deathMessage.text = (
