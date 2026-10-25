@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c4waqbvpp812v"]
+
+[node name="Intro" type="Control" unique_id=2119747953]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="." unique_id=602095795]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(20, 20)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=2147270046]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Context of the game"
