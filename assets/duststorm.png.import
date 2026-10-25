@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://yq8ifpmfwjhl"
+=======
+uid="uid://tt00nkpg3wao"
+>>>>>>> Stashed changes
 path="res://.godot/imported/duststorm.png-4de0206a1532775a68c04af648fd3ad7.ctex"
 metadata={
 "vram_texture": false
