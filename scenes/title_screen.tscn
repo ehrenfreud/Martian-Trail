@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bmqdke5gmfbtp"]
+
+[ext_resource type="Script" uid="uid://chtb1y53t52pc" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="Texture2D" uid="uid://cluvo64l0w7ax" path="res://assets/titlescreen.png" id="2_sa3yf"]
+
+[node name="title_screen" type="Control" unique_id=296835181]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fgkus")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=551588589]
+position = Vector2(511.50006, 270.00003)
+scale = Vector2(1.4928571, 1.5485715)
+texture = ExtResource("2_sa3yf")
+
+[node name="Start" type="Button" parent="." unique_id=315092881]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 310.0
+offset_right = 782.0
+offset_bottom = 520.0
+text = "Begin"
