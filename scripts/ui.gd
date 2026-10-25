@@ -13,6 +13,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	message.text = (
 		"[center][b]~~~~~~~~~~~~~~~~~~~~|[/b] DAY %2s [b]|~~~~~~~~~~~~~~~~~~~~[/b]\n" %str(player.days) +
-		"Distance from Martian Base: [b] %4s [/b] / 7000 km[/center]" %str(player.distanceFromBase) +
-		""
+		"Distance from Martian Base: [b] %4s [/b] / 7000 km\n" %str(player.distanceFromBase) +
+		"Remaining water:[b] " + str(player.water) + "%[/b][/center]"
 		)
