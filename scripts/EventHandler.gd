@@ -20,47 +20,117 @@ extends Node
 @onready var solarFlareImage1 = $SolarFlareImage1
 @onready var solarFlareImage2 = $SolarFlareImage2
 
+var currentEvent = ""
+
 var list = ["dust_storm", "geysers", "solar flare", 
 "dust_devils", "snow_storms", "wind_storms"]
 var daysSinceEvent: int = 0
 
 func callDustStorm() -> void:
+	currentEvent = "DustStorm"
 	dustStormImage1.show()
 	dustStormImage2.show()
-	event_ui.show_message("Your P.A. beeps suddenly. The sharp trill snaps you out of your reverie.")
-	await get_tree().create_timer(1.0).timeout
-	event_ui.remove_message()
-	event_ui.show_message("**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**")
-	await get_tree().create_timer(1.0).timeout
-	event_ui.remove_message()
-	event_ui.show_message("Solar flares create extremely dangerous environments. Not only do they whip up strong storms on Mars's surface, but the acute radiation could cause fast and painful death through radiation poisoning. Your rover can set up strong radiation shielding, but in order to do it, it must stop moving. If you do, you might lose valuable time.")
+	#event_ui.show_event("Your P.A. beeps suddenly. The sharp trill snaps you out of your reverie.")
+	#await get_tree().create_timer(1.0).timeout
+	#event_ui.remove_message()
+	
+	 
+	#await get_tree().create_timer(1.0).timeout
+	#event_ui.remove_message()
+	#event_ui.show_message("Solar flares create extremely dangerous environments. Not only do they whip up strong storms on Mars's surface, but the acute radiation could cause fast and painful death through radiation poisoning. Your rover can set up strong radiation shielding, but in order to do it, it must stop moving. If you do, you might lose valuable time.")
 	pass
 func callGeysers() -> void:
-	event_ui.show_message("geysers")
+	currentEvent = "Geysers"
+	#event_ui.show_message("geysers")
 	geysersImage1.show()
 	geysersImage2.show()
+	var choices: Array[String] = ["<> Press on through the polar caps.","<> Navigate around the polar ice caps."]
+	var texts: Array[String] = ["**WARNING: POSSIBLE GEYSERS AHEAD!**", "You remember what little you can from your lessons on Mars. When the sun heats up dry ice underneath the polar caps, pockets of pressure build up- bursting outwards as geysers of pressurized CO2 and debris. If you press through the field, you'll continue as the plan entails, but debris from a geyser may damage your rover. If a serious blow is dealt to your rover, you don't know if you'll even be able to repair it"]
+	event_ui.show_event_array(texts, choices)
+	
+	
 	pass
 func callDustDevil() -> void:
+	currentEvent = "DustDevil"
 	event_ui.show_message("dust devil")
 	dustDevilImage1.show()
 	dustDevilImage2.show()
 	pass
 func callSnowStorm() -> void:
+	currentEvent = "SnowStorm"
 	event_ui.show_message("snow storm")
 	snowStormImage1.show()
 	snowStormImage2.show()
 	pass
 func callWindStorm() -> void:
+	currentEvent = "WindStorm"
 	event_ui.show_message("wind storm")
 	windStormImage1.show()
 	windStormImage2.show()
 	pass
 func callSolarFlare() -> void:
-	event_ui.show_message("solar flare")
+	currentEvent = "SolarFlare"
+	#event_ui.show_event("solar flare")
 	solarFlareImage1.show()
 	solarFlareImage2.show()
+	var choices: Array[String] = ["<> Play it safe: Hunker down","<> Risk it: Brave the storm"]
+	event_ui.show_event(["**BEEP BEEP!! WARNING: SOLAR FLARE INCOMING. PLEASE SEEK SHELTER!**"], 
+	choices)
 
+func on_choice_selected(index: int) -> void:
+	print("HELLO")
+	match currentEvent:
+		"SolarFlare":
+			if index == 0:
+				print("son?")
+				event_ui.type_message("** The lights dim as your rover retracts into itself. You feel a pang in your chest, thinking about the time you might lose… but at least you know you'll be safe. ")
+				event_ui.continue_button()
+			elif index == 1:
+				if randi() % 2 == 0:
+					event_ui.type_message("SUCCESS: The rover presses on. While you can't dismiss the gnawing feeling in your stomach, you chalk it up to anxiety rather than radiation poisoning. You can't stop here: you must return.")
+					event_ui.continue_button()
+				else:
+					event_ui.type_two_messages("FAILURE: You continue onwards. It only takes a minute before you feel immense nausea in your stomach. It progresses to a rending pain in your chest, then the rest of your body. Your cells, one by one, are crumbling… you feel fatigued. You are so, so… tired. Your eyelids close, and you collapse onto the terminal. The last thing you do before you give in to your exhaustion is slam the button, initializing the shutdown sequence. You have gained some ground, but at what cost?",
+					"…
 
+You open your eyes a day or two later. You feel… fine? 
+
+(Gain Radiation Poisoning)
+")
+					event_ui.continue_button()
+				# Apply this choice's effects.
+		"DustDevil":
+			if index == 0:
+					print("Dust storm: take cover")
+			if index == 1:
+					print("Dust storm: push through")
+		"DustStorm":
+			if index == 0:
+				print("")
+			if index == 1:
+				print("")
+		"WindStorm":
+			if index == 0:
+				print("")
+			if index == 1:
+				print("")
+		"SnowStorm":
+			if index == 0:
+				print("")
+			if index == 1:
+				print("")
+		"Geysers":
+			if index == 0:
+				if randi() % 2 == 0:
+					event_ui.type_message("SUCCESS: By sheer luck, you dodge any possible ruination, saving yourself from an unfortunate end. It takes you a week, but you emerge on the other side of the polar caps unharmed.")
+					event_ui.continue_button()
+				else:
+					event_ui.type_message("FAILURE: A blast of CO2 blew up near you, sending a chunk of ice flying into your rover. Immediately, it let you know just how big of a problem you had. Warning lights flashed, and alarms blared. Soon, your rover shut down. The damage was severe. It would never move again, and neither will you.")
+					event_ui.continue_button()
+			if index == 1:
+				event_ui.type_message("You can't risk your life. Not when the threat of death is always looming over you. You spread a worksheet over your terminal, and calculate the new path.")
+				event_ui.continue_button()
+				
 func step():
 	daysSinceEvent += 1
 	if (randi()%100) < (daysSinceEvent*3):
@@ -70,7 +140,7 @@ func step():
 		ui.message.hide()
 		match randi()%5:
 			0: callDustStorm()
-			1: callGeysers()
+			1: callGeysers() 
 			2: callDustDevil()
 			3: callSnowStorm()
 			4: callWindStorm()
@@ -102,6 +172,7 @@ func restart():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	event_ui.choice_selected.connect(on_choice_selected)
 	dustStormImage1.hide()
 	dustStormImage2.hide()
 	geysersImage1.hide()
