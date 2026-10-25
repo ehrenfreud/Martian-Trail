@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @export_range(0.0, 100.0) var food: float = 100.0
 @export_range(0.0, 100.0) var oxygen: float = 100.0
-@export_range(0.0, 100.0) var battery: float = 100.0
+@export_range(0.0, 100.0) var power: float = 100.0
 @export_range(0.0, 100.0) var water: float = 100.0
 @export_range(0.0, 100.0) var hull_integrity: float = 100.0
 
