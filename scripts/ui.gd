@@ -9,7 +9,6 @@ var typing_speed: float = 0.035
 
 func _ready() -> void:
 	pass
-	
 
 func show_message(text: String) -> void:
 	message.text = text
@@ -18,4 +17,4 @@ func _on_continue_pressed() -> void:
 	hide()
 
 func _process(delta: float) -> void:
-	show_message("Distance: " + str(player.distance_from_base))
+	show_message("Distance: " + str(player.distanceFromBase))

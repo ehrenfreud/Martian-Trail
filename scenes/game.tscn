@@ -32,3 +32,8 @@ script = ExtResource("6_u5sy4")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=86995643]
 
 [node name="UI" parent="." unique_id=344335980 instance=ExtResource("4_lbhrr")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1510224209]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
