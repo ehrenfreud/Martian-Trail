@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://2wx6gdujue41" path="res://scripts/animated_sprite_2d.gd" id="8_ir15t"]
 [ext_resource type="Texture2D" uid="uid://jkwsym0lppum" path="res://assets/geyser.png" id="8_trtic"]
 [ext_resource type="Texture2D" uid="uid://cirnwp57geh8h" path="res://assets/dustdevil.png" id="9_ir15t"]
+[ext_resource type="Texture2D" uid="uid://eimao6trhrym" path="res://assets/snowstorm.png" id="10_ca42v"]
 [ext_resource type="Texture2D" uid="uid://i25cticid5fl" path="res://assets/windstorm.png" id="11_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dcjc4fgpc7581" path="res://assets/solarflare.png" id="12_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://db4ifk7wveqr7" path="res://scenes/death.tscn" id="15_ca42v"]
